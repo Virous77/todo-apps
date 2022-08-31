@@ -1,0 +1,31 @@
+.search-form {
+  margin: auto;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 6.4rem;
+  width: 100%;
+}
+
+.search-form input {
+  width: 60%;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid midnightblue;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-form label {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .search-form {
+    width: 100%;
+    margin-top: 6.4rem;
+  }
+
+  .search-form input {
+    width: 100%;
+  }
+}

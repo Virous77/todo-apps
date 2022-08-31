@@ -1,0 +1,69 @@
+.add-form {
+  background-color: rgb(232, 231, 231);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 10px;
+}
+
+.add-form label {
+  font-weight: bold;
+  font-size: 1rem;
+  display: none;
+}
+
+.add-form input {
+  width: 100%;
+  padding: 15px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 1.1rem;
+}
+
+.add-form input::placeholder {
+  font-size: 1rem;
+}
+
+.add {
+  border: none;
+  background-color: transparent;
+  display: flex;
+}
+
+.add-form svg {
+  font-size: 3.6rem;
+  cursor: pointer;
+  color: green;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.ad-form svg:focus,
+.add-form svg:hover {
+  outline: none;
+  background-color: green;
+  color: white;
+  opacity: 1;
+  outline: none;
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .add-form svg {
+    font-size: 3.8rem;
+  }
+}
