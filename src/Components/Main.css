@@ -29,6 +29,7 @@
   position: fixed;
   max-width: 600px;
   left: 50%;
+  z-index: 1000;
   bottom: -2rem;
   margin: auto;
   transform: translate(-50%, -50%);
@@ -167,6 +168,7 @@ ul {
   background-color: rgb(213, 213, 213);
   position: fixed;
   max-width: 600px;
+  z-index: 1000;
   bottom: 0;
   width: 100%;
 }
