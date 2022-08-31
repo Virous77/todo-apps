@@ -9,9 +9,7 @@ import AddForm from "./Components/AddForm";
 import SearchItem from "./Components/Search/SearchItem";
 
 function App() {
-  const [Items, setItems] = useState(
-    JSON.parse(localStorage.getItem("Shoppinglist"))
-  );
+  const [Items, setItems] = useState([]);
   const [newItem, setNewItem] = useState("");
   const [search, setSearch] = useState("");
   const [hide, setHide] = useState(false);
@@ -24,7 +22,6 @@ function App() {
   ////////////////List-Delete-Add ITEM//////////////////////////////////////
   const helperSaveDelete = (newItems) => {
     setItems(newItems);
-    localStorage.setItem("Shoppinglist", JSON.stringify(newItems));
   };
 
   const addItem = (item) => {
