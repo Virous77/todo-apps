@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import Header from "./Components/Header";
@@ -9,7 +9,8 @@ import AddForm from "./Components/AddForm";
 import SearchItem from "./Components/Search/SearchItem";
 
 function App() {
-  const [Items, setItems] = useState([]);
+  const [Items, setItems] = useState(
+  JSON.parse(localStorage.getItem("Shoppinglist")) || []);
   const [newItem, setNewItem] = useState("");
   const [search, setSearch] = useState("");
   const [hide, setHide] = useState(false);
@@ -18,10 +19,14 @@ function App() {
   const [all, setALL] = useState(true);
   const [comp, setComp] = useState(false);
   const [clear, setClear] = useState(false);
+  
+    useEffect(() => {}, [Items]);
 
   ////////////////List-Delete-Add ITEM//////////////////////////////////////
   const helperSaveDelete = (newItems) => {
     setItems(newItems);
+    localStorage.setItem("Shoppinglist", JSON.stringify(newItems));
+
   };
 
   const addItem = (item) => {
