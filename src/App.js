@@ -20,32 +20,28 @@ function App() {
   const [comp, setComp] = useState(false);
   const [clear, setClear] = useState(false);
   
-    useEffect(() => {}, [Items]);
+    useEffect(() => {
+    localStorage.setItem("Shoppinglist", JSON.stringify(Items));
+    }, [Items]);
 
   ////////////////List-Delete-Add ITEM//////////////////////////////////////
-  const helperSaveDelete = (newItems) => {
-    setItems(newItems);
-    localStorage.setItem("Shoppinglist", JSON.stringify(newItems));
-
-  };
-
   const addItem = (item) => {
     const id = Items.length ? Items[Items.length - 1].id + 1 : 1;
     const myNewItem = { id, checked: false, item };
     const listItem = [...Items, myNewItem];
-    helperSaveDelete(listItem);
+    setItems(listItem);
   };
 
   const handleCheck = (id) => {
     const listItem = Items.map((item) =>
       item.id === id ? { ...item, checked: item.checked === false } : item
     );
-    helperSaveDelete(listItem);
+    setItems(listItem);
   };
 
   const deleteButtonHandler = (id) => {
     const deletes = Items.filter((item) => item.id !== id);
-    helperSaveDelete(deletes);
+    setItems(deletes);
   };
 
   const SubmitHandler = (e) => {
